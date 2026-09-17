@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+:root {
+  --background: #05070d;
+  --foreground: #e8ecf6;
+
+  --surface: #0b0f1a;
+  --surface-2: #10162530;
+  --border-subtle: #ffffff14;
+  --border-strong: #ffffff26;
+
+  --muted: #8b92a8;
+
+  --brand-primary: #6c5ce7;
+  --brand-secondary: #00d9c0;
+  --brand-tertiary: #4f8dfd;
+
+  --gradient-hero: radial-gradient(
+      60% 50% at 15% 10%,
+      color-mix(in srgb, var(--brand-primary) 28%, transparent) 0%,
+      transparent 60%
+    ),
+    radial-gradient(
+      55% 45% at 85% 20%,
+      color-mix(in srgb, var(--brand-tertiary) 24%, transparent) 0%,
+      transparent 60%
+    ),
+    radial-gradient(
+      70% 60% at 50% 100%,
+      color-mix(in srgb, var(--brand-secondary) 16%, transparent) 0%,
+      transparent 60%
+    );
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-border-subtle: var(--border-subtle);
+  --color-border-strong: var(--border-strong);
+  --color-muted: var(--muted);
+  --color-brand-primary: var(--brand-primary);
+  --color-brand-secondary: var(--brand-secondary);
+  --color-brand-tertiary: var(--brand-tertiary);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+.text-gradient {
+  background: linear-gradient(
+    90deg,
+    var(--brand-secondary) 0%,
+    var(--brand-tertiary) 50%,
+    var(--brand-primary) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.grid-overlay {
+  background-image:
+    linear-gradient(to right, var(--border-subtle) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--border-subtle) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, black 40%, transparent 90%);
+}
